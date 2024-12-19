@@ -26,5 +26,5 @@ jobs:
             - name: Run StyleCop Analyzers
               run: |
                 dotnet tool install --global dotnet-format
-                dotnet format MedicalInfo.sln --check --verbosity diagnostic
+                dotnet format --verify-no-changes --verbosity diagnostic
 
