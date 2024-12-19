@@ -23,8 +23,8 @@ jobs:
             - name: Restore dependencies
               run: dotnet restore
 
-            - name: Build solution
-              run: dotnet build --no-restore --configuration Release
+            - name: Build solution for x86
+              run: dotnet build --no-restore --configuration Release -p:Platform=x86
 
             - name: Run StyleCop Analyzers
               run: |

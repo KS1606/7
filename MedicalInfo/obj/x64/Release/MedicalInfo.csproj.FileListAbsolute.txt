@@ -1,0 +1,1 @@
+C:\Users\KS\source\repos\MedicalInfoCOPYQ\MedicalInfo\obj\x64\Release\MedicalInfo.csproj.AssemblyReference.cache
