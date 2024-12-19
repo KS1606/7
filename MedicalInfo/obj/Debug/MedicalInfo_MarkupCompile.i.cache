@@ -16,5 +16,5 @@ C:\Users\KS\source\repos\MedicalInfoCOPYQ\MedicalInfo\App.xaml
 41-848817500
 BookAppointmentWindow.xaml;DoctorProfileWindow.xaml;DoctorsListWindow.xaml;DoctorsWindow.xaml;EditMedicationWindow.xaml;EditTreatmentRecordWindow.xaml;GlavAndinWindow.xaml;GlavDoctorWindow.xaml;GlavWindow.xaml;MainWindow.xaml;MedicalHistoryPage.xaml;MedicalHistoryPage2.xaml;PatientDetailWindow.xaml;PatientListWindow.xaml;PatientProfileWindow.xaml;PreparationsWindow.xaml;RegisterWindow.xaml;
 
-True
+False
 
