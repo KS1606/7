@@ -20,6 +20,9 @@ jobs:
               with:
                 dotnet-version: 6.0
 
+            -   name: Build solution
+                run: dotnet build --configuration Release /p:Platform=x64
+
             - name: Restore dependencies
               run: dotnet restore
 
