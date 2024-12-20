@@ -1,30 +1,35 @@
-name: Check Style Code for C# WPF
+name: .NET Framework Build and Syntax Check
 
 on:
-    push:
-        branches:
-            - new_vetochka
-    pull_request:
-        branches:
-            - new_vetochka
+  push:
+    branches:
+      - prseven
+  pull_request:
+    branches:
+      - prseven
 
 jobs:
-    checkstyle:
-        runs-on: windows-latest
-        steps:
-            - name: Checkout repository
-              uses: actions/checkout@v2
+  build:
+    runs-on: windows-latest
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
 
-            - name: Setup .NET
-              uses: actions/setup-dotnet@v3
-              with:
-                dotnet-version: 6.0
+    - name: Install .NET Framework Developer Pack
+      run: choco install netfx-4.7.2-devpack -y
 
-            - name: Restore dependencies
-              run: dotnet restore
+    - name: Set up MSBuild
+      uses: microsoft/setup-msbuild@v1
 
-            - name: Run StyleCop Analyzers
-              run: |
-                dotnet tool install --global dotnet-format --version 5.1.250801
-                dotnet format --verify-no-changes --verbosity diagnostic
+    - name: Build with MSBuild
+      run: msbuild /p:Configuration=Release
+
+    - name: Install XAML Styler
+      run: dotnet tool install -g XamlStyler.Console
+
+    - name: Format XAML files
+      run: xstyler -d ./ 
+
+    - name: Check for changes after formatting
+      run: git diff --exit-code
 
